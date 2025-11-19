@@ -28,6 +28,16 @@ app.use(cors());
 // Database Connection
 connectDB();
 
+app.use(cors({
+  origin: [
+    "https://artisans-9zib.vercel.app",   // your frontend
+    "http://localhost:3000"               // optional for testing
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 // API Routes
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
