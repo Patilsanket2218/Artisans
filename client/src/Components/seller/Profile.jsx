@@ -31,7 +31,7 @@ function SellerProfile() {
         }
 
         const response = await axios.get(
-          `http://localhost:5000/api/users/profile/`,
+          `https://artisans-2uw2.onrender.com/api/users/profile/`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -82,7 +82,7 @@ function SellerProfile() {
       });
 
       const response = await axios.put(
-        `http://localhost:5000/api/users/editprofile`,
+        `https://artisans-2uw2.onrender.com/api/users/editprofile`,
         formDataToSend,
         {
           headers: {
@@ -122,7 +122,7 @@ function SellerProfile() {
           <img
             src={
               seller.profilePic
-                ? `http://localhost:5000/uploads/${seller.profilePic}`
+                ? `https://artisans-2uw2.onrender.com/uploads/${seller.profilePic}`
                 : Defaultimage
             }
             alt="Profile"

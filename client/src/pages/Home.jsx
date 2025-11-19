@@ -15,7 +15,7 @@ const LandingPage = () => {
   const API_URL = "https://artisans-fawn.vercel.app";
 
   useEffect(() => {
-    fetch("https://artisans-fawn.vercel.app/api/products")
+    fetch("https://artisans-2uw2.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -194,7 +194,7 @@ const LandingPage = () => {
                     {/* Product Image */}
                     <div className="position-relative">
                       <img
-                        src={`https://artisans-fawn.vercel.app/uploads/${product.images[0]}`}
+                        src={`https://artisans-2uw2.onrender.com/uploads/${product.images[0]}`}
                         alt={product.title}
                         className="card-img-top rounded-top-4"
                         style={{
@@ -378,7 +378,7 @@ const LandingPage = () => {
                     {/* Product Image */}
                     <div className="position-relative">
                       <img
-                        src={`https://artisans-fawn.vercel.app/uploads/${product.images[0]}`}
+                        src={`https://artisans-2uw2.onrender.com/uploads/${product.images[0]}`}
                         alt={product.title}
                         className="card-img-top rounded-top-4"
                         style={{

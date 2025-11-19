@@ -61,7 +61,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://artisans-fawn.vercel.app/api/users/register",
+        "https://artisans-2uw2.onrender.com/api/users/register",
         {
           name: fullName,
           email,

@@ -14,7 +14,7 @@ const ContactUs = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const API_URL = "https://artisans-fawn.vercel.app/"; // Adjust with your backend URL
+  const API_URL = "https://artisans-2uw2.onrender.com/"; // Adjust with your backend URL
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

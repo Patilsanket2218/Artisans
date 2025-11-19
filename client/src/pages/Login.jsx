@@ -25,7 +25,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://artisans-fawn.vercel.app/api/users/login",
+        "https://artisans-2uw2.onrender.com/api/users/login",
         {
           email,
           password,

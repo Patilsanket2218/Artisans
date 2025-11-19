@@ -64,7 +64,7 @@ const ProductManagement = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get("https://artisans-2uw2.onrender.com/api/products");
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching products", error);
@@ -156,7 +156,7 @@ const ProductManagement = () => {
       if (editingProduct && editingProduct._id) {
         // Update existing product
         response = await axios.put(
-          `http://localhost:5000/api/products/${editingProduct._id}`,
+          `https://artisans-2uw2.onrender.com/api/products/${editingProduct._id}`,
           form,
           { headers }
         );
@@ -164,7 +164,7 @@ const ProductManagement = () => {
       } else {
         // Add new product
         response = await axios.post(
-          "http://localhost:5000/api/products/add",
+          "https://artisans-2uw2.onrender.com/api/products/add",
           form,
           { headers }
         );
@@ -191,7 +191,7 @@ const ProductManagement = () => {
     if (!confirmDelete) return; // Exit if user cancels
 
     try {
-      await axios.delete(`http://localhost:5000/api/products/${productId}`, {
+      await axios.delete(`https://artisans-2uw2.onrender.com/api/products/${productId}`, {
         headers: { Authorization: `Bearer ${userToken}` },
       });
       toast.success("Product deleted successfully!");
@@ -458,7 +458,7 @@ const ProductManagement = () => {
                     <td>
                       {product.images?.length > 0 && (
                         <img
-                          src={`http://localhost:5000/uploads/${product.images[0]}`}
+                          src={`https://artisans-2uw2.onrender.com/uploads/${product.images[0]}`}
                           alt={product.name}
                           style={{
                             width: "50px",
@@ -548,7 +548,7 @@ const ProductManagement = () => {
                             key={index}
                           >
                             <img
-                              src={`http://localhost:5000/uploads/${image}`}
+                              src={`https://artisans-2uw2.onrender.com/uploads/${image}`}
                               alt={selectedProduct.name}
                               className="d-block w-100"
                               style={{

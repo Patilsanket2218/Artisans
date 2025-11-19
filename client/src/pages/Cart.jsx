@@ -55,7 +55,7 @@ const CheckoutForm = ({
 
     try {
       const response = await axios.get(
-        "https://artisans-fawn.vercel.app/api/users/profile",
+        "https://artisans-2uw2.onrender.com/api/users/profile",
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }
@@ -75,7 +75,7 @@ const CheckoutForm = ({
       const stockData = {};
       for (const item of cartItems) {
         const response = await axios.get(
-          `https://artisans-fawn.vercel.app/api/products/${item.product._id}`
+          `https://artisans-2uw2.onrender.com/api/products/${item.product._id}`
         );
         stockData[item.product._id] = response.data.stock;
       }
@@ -156,7 +156,7 @@ const CheckoutForm = ({
       console.log("Placing order with PaymentIntent ID:", paymentIntentId);
 
       const response = await axios.post(
-        "https://artisans-fawn.vercel.app/api/orders/place-order",
+        "https://artisans-2uw2.onrender.com/api/orders/place-order",
         {
           cartItems,
           totalAmount,
@@ -183,7 +183,7 @@ const CheckoutForm = ({
           const productId = item.product._id || item.product;
 
           try {
-            await axios.delete("https://artisans-fawn.vercel.app/api/users/cart/remove", {
+            await axios.delete("https://artisans-2uw2.onrender.com/api/users/cart/remove", {
               headers: {
                 Authorization: `Bearer ${authToken}`,
               },
@@ -262,7 +262,7 @@ const Cart = () => {
 
     try {
       const response = await axios.get(
-        "https://artisans-fawn.vercel.app/api/users/cart/",
+        "https://artisans-2uw2.onrender.com/api/users/cart/",
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }
@@ -281,7 +281,7 @@ const Cart = () => {
 
     try {
       const response = await axios.get(
-        `https://artisans-fawn.vercel.app/api/users/profile`,
+        `https://artisans-2uw2.onrender.com/api/users/profile`,
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }
@@ -318,7 +318,7 @@ const Cart = () => {
   const updateQuantity = async (productId, newQuantity) => {
     try {
       await axios.post(
-        `https://artisans-fawn.vercel.app/api/users/cart/update`,
+        `https://artisans-2uw2.onrender.com/api/users/cart/update`,
         { productId, quantity: newQuantity },
         { headers: { Authorization: `Bearer ${authToken}` } }
       );
@@ -330,7 +330,7 @@ const Cart = () => {
 
   const removeFromCart = async (productId) => {
     try {
-      await axios.delete(`https://artisans-fawn.vercel.app/api/users/cart/remove`, {
+      await axios.delete(`https://artisans-2uw2.onrender.com/api/users/cart/remove`, {
         headers: { Authorization: `Bearer ${authToken}` },
         data: { productId },
       });
@@ -368,7 +368,7 @@ const Cart = () => {
 
     try {
       const { data } = await axios.post(
-        "https://artisans-fawn.vercel.app/api/orders/create-payment-intent",
+        "https://artisans-2uw2.onrender.com/api/orders/create-payment-intent",
         {
           amount: totalPrice,
           customerAddress: {
@@ -450,7 +450,7 @@ const Cart = () => {
                   <tr key={item.product._id}>
                     <td className="d-flex align-items-center">
                       <img
-                        src={`https://artisans-fawn.vercel.app/uploads/${item.product.images}`}
+                        src={`https://artisans-2uw2.onrender.com/uploads/${item.product.images}`}
                         alt={item.product.name}
                         width="60"
                         className="rounded me-3"

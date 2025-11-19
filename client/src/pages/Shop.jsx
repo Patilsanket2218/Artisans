@@ -18,7 +18,7 @@ const Shop = () => {
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("All");
   const [selectedRating, setSelectedRating] = useState("All");
-  const API_URL = "https://artisans-fawn.vercel.app/";
+  const API_URL = "https://artisans-2uw2.onrender.com/";
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -76,7 +76,7 @@ const Shop = () => {
   ]);
 
   useEffect(() => {
-    fetch("https://artisans-fawn.vercel.app/api/products")
+    fetch("https://artisans-2uw2.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -256,7 +256,7 @@ const Shop = () => {
                 <div className="col-md-4" key={product.id}>
                   <div className="card border-0 shadow-sm rounded-4 h-100">
                     <img
-                      src={`https://artisans-fawn.vercel.app/uploads/${product.images[0]}`}
+                      src={`https://artisans-2uw2.onrender.com/uploads/${product.images[0]}`}
                       alt={product.title}
                       className="card-img-top rounded-top-4"
                       style={{ height: "220px", objectFit: "cover" }}

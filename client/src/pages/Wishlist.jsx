@@ -17,7 +17,7 @@ const Wishlist = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "https://artisans-fawn.vercel.app/api/users/wishlist/",
+          "https://artisans-2uw2.onrender.com/api/users/wishlist/",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const Wishlist = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://artisans-fawn.vercel.app/api/users/wishlist/remove",
+        "https://artisans-2uw2.onrender.com/api/users/wishlist/remove",
         { productId },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -127,7 +127,7 @@ const Wishlist = () => {
                 <div className="card border-0 shadow-lg rounded-lg overflow-hidden position-relative">
                   <div className="position-relative">
                     <img
-                      src={`https://artisans-fawn.vercel.app/uploads/${item.images[0]}`}
+                      src={`https://artisans-2uw2.onrender.com/uploads/${item.images[0]}`}
                       className="card-img-top"
                       alt={item.name}
                     />

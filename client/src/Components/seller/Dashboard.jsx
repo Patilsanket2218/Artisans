@@ -45,7 +45,7 @@ function SellDashboard() {
 
         // Fetch key metrics
         const response = await axios.get(
-          "http://localhost:5000/api/seller/dashboard",
+          "https://artisans-2uw2.onrender.com/api/seller/dashboard",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -72,7 +72,7 @@ function SellDashboard() {
         if (!token) return;
 
         const response = await axios.get(
-          "http://localhost:5000/api/seller/dashboard",
+          "https://artisans-2uw2.onrender.com/api/seller/dashboard",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

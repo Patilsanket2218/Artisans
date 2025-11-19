@@ -35,7 +35,7 @@ function Profile() {
           return;
         }
         const response = await axios.get(
-          "https://artisans-fawn.vercel.app/api/users/profile",
+          "https://artisans-2uw2.onrender.com/api/users/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -67,7 +67,7 @@ function Profile() {
         }
 
         const response = await axios.get(
-          "https://artisans-fawn.vercel.app/api/users/orders",
+          "https://artisans-2uw2.onrender.com/api/users/orders",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -96,7 +96,7 @@ function Profile() {
         }
 
         const response = await axios.get(
-          "https://artisans-fawn.vercel.app/api/users/wishlist",
+          "https://artisans-2uw2.onrender.com/api/users/wishlist",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -143,7 +143,7 @@ function Profile() {
         }
       });
       await axios.put(
-        "https://artisans-fawn.vercel.app/api/users/editprofile",
+        "https://artisans-2uw2.onrender.com/api/users/editprofile",
         formDataToSend,
         {
           headers: {
@@ -176,7 +176,7 @@ function Profile() {
                   formData.profilePic instanceof File
                     ? URL.createObjectURL(formData.profilePic)
                     : user?.profilePic
-                    ? `https://artisans-fawn.vercel.app/uploads/${user.profilePic}`
+                    ? `https://artisans-2uw2.onrender.com/uploads/${user.profilePic}`
                     : Defaultimage
                 }
                 alt="Profile"
@@ -361,7 +361,7 @@ function Profile() {
                       className="list-group-item d-flex align-items-center"
                     >
                       <img
-                        src={`https://artisans-fawn.vercel.app/uploads/${item.images}`}
+                        src={`https://artisans-2uw2.onrender.com/uploads/${item.images}`}
                         alt={item.name}
                         className="me-2 rounded"
                         style={{

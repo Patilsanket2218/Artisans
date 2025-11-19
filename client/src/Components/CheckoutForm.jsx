@@ -33,7 +33,7 @@ const CheckoutForm = () => {
       }
 
       const { data } = await axios.post(
-        "https://artisans-fawn.vercel.app/api/orders/confirm-payment",
+        "https://artisans-2uw2.onrender.com/api/orders/confirm-payment",
         {
           paymentMethodId: paymentMethod.id,
         },
