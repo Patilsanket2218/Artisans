@@ -12,10 +12,10 @@ const LandingPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
-  const API_URL = "http://localhost:5000";
+  const API_URL = "https://artisans-fawn.vercel.app";
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://artisans-fawn.vercel.app/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -194,7 +194,7 @@ const LandingPage = () => {
                     {/* Product Image */}
                     <div className="position-relative">
                       <img
-                        src={`http://localhost:5000/uploads/${product.images[0]}`}
+                        src={`https://artisans-fawn.vercel.app/uploads/${product.images[0]}`}
                         alt={product.title}
                         className="card-img-top rounded-top-4"
                         style={{
@@ -378,7 +378,7 @@ const LandingPage = () => {
                     {/* Product Image */}
                     <div className="position-relative">
                       <img
-                        src={`http://localhost:5000/uploads/${product.images[0]}`}
+                        src={`https://artisans-fawn.vercel.app/uploads/${product.images[0]}`}
                         alt={product.title}
                         className="card-img-top rounded-top-4"
                         style={{

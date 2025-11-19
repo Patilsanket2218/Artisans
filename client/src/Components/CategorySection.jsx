@@ -41,7 +41,7 @@ const CategorySection = ({ products = [] }) => {
               <div className="card border-0 shadow-sm rounded-4 h-100">
                 {product.images?.length > 0 && (
                   <img
-                    src={`http://localhost:5000/uploads/${product.images[0]}`}
+                    src={`https://artisans-fawn.vercel.app/uploads/${product.images[0]}`}
                     alt={product.name}
                     className="card-img-top rounded-top-4"
                     style={{ height: "200px", objectFit: "cover" }}

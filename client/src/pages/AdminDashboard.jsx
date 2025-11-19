@@ -84,7 +84,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token");
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/admin/profile",
+          "https://artisans-fawn.vercel.app/api/admin/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -110,7 +110,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/dashboard/stats",
+        "https://artisans-fawn.vercel.app/api/admin/dashboard/stats",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -129,7 +129,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:5000/api/admin/dashboard/sales",
+        "https://artisans-fawn.vercel.app/api/admin/dashboard/sales",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -164,7 +164,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/users",
+        "https://artisans-fawn.vercel.app/api/admin/users",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -181,7 +181,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/dashboard/sales",
+        "https://artisans-fawn.vercel.app/api/admin/dashboard/sales",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -198,7 +198,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token");
       const newStatus = currentStatus === "active" ? "banned" : "active";
       await axios.put(
-        `http://localhost:5000/api/admin/users/${userId}`, // Match your API route
+        `https://artisans-fawn.vercel.app/api/admin/users/${userId}`, // Match your API route
         { status: newStatus }, // Only updating status
         { headers: { Authorization: `Bearer ${token}` } }
       );

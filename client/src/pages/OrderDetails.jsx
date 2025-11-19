@@ -17,7 +17,7 @@ const OrderDetails = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:5000/api/orders/${orderId}`,
+          `https://artisans-fawn.vercel.app/api/orders/${orderId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -130,7 +130,7 @@ const OrderDetails = () => {
                     <td>{item.product.name}</td>
                     <td className="print-hidden">
                       <img
-                        src={`http://localhost:5000/uploads/${item.product.images[0]}`}
+                        src={`https://artisans-fawn.vercel.app/uploads/${item.product.images[0]}`}
                         alt={item.product.name}
                         width="50"
                         height="50"
