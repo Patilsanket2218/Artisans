@@ -14,7 +14,7 @@ import adminRoutes from "./routes/AdminRoutes.js";
 
 dotenv.config();
 
-// ✅ Define `__dirname`
+// Get __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -23,20 +23,27 @@ const app = express();
 // Middleware
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
-app.use(cors());
+
+// ⭐ FIX: Proper CORS setup
+app.use(
+  cors({
+    origin: [
+      "https://artisans-9zib.vercel.app", // frontend
+      "http://localhost:3000", // local dev (optional)
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 // Database Connection
 connectDB();
 
-app.use(cors({
-  origin: [
-    "https://artisans-9zib.vercel.app",   // your frontend
-    "http://localhost:3000"               // optional for testing
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+// ⭐ Default Route to check server is working
+app.get("/", (req, res) => {
+  res.send("✅ Artisans Backend Server is Running Successfully!");
+});
 
 // API Routes
 app.use("/api/users", userRoutes);
