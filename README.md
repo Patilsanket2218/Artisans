@@ -1,6 +1,5 @@
 # 🏺 Artisans: Global Handcrafted Goods Marketplace
 
-![Artisans Marketplace Banner](https://raw.githubusercontent.com/vighneshparab/Artisans/e76940b27c8b5f596be592c9f3c64cdd3214df8e/Banner.png)
 
 ## 📝 Project Overview
 
