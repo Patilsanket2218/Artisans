@@ -150,9 +150,9 @@ This project is open-source and available under the MIT License. See `LICENSE` f
 ## 📞 Contact & Support
 
 **Vighnesh Sadanand Parab**
-- 📧 Email: vighneshparab83@gmail.com
-- 🔗 GitHub: [/vighneshparab](https://github.com/vighneshparab)
-- 🌐 Project Repository: [Artisans Marketplace](https://github.com/vighneshparab/Artisans/)
+- 📧 Email: sp5768528@gmail.com
+- 🔗 GitHub: https://github.com/Patilsanket2218
+- 🌐 Project Repository: [Artisans Marketplace](https://github.com/Patilsanket2218/Artisans)
 
 ## 🙏 Acknowledgements
 
