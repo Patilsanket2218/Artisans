@@ -1,5 +1,9 @@
 # 🏺 Artisans: Global Handcrafted Goods Marketplace
 
+![GreenHeaven Banner](https://tse3.mm.bing.net/th/id/OIP.bX-EgmQwGuEkoBUtox61BwHaEK?pid=Api&P=0&h=180)
+![GreenHeaven Banner](https://tse3.mm.bing.net/th/id/OIP.DjPTGqA8nARW2Fzpa84J4wHaE7?pid=Api&P=0&h=180)
+![GreenHeaven Banner](https://tse2.mm.bing.net/th/id/OIP.CEQGwhzVLJlZf_7o9DJiDwHaEV?pid=Api&P=0&h=180)
+
 
 ## 📝 Project Overview
 
