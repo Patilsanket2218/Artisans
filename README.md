@@ -148,9 +148,10 @@ This project is open-source and available under the MIT License. See `LICENSE` f
 
 ## 📞 Contact & Support
 
-**Vighnesh Sadanand Parab**
+**Sanket Manohar Patil**
 - 📧 Email: sp5768528@gmail.com
 - 🔗 GitHub: https://github.com/Patilsanket2218
+- 🔗 Live link: [https://github.com/Patilsanket2218](https://artisans-9zib.vercel.app/)
 - 🌐 Project Repository: [Artisans Marketplace](https://github.com/Patilsanket2218/Artisans)
 
 ## 🙏 Acknowledgements
