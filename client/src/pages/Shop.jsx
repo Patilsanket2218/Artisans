@@ -65,7 +65,7 @@ const Shop = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`${API_URL}/api/users/wishlist/add`, {
+      const res = await fetch(`${API_URL}api/users/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
