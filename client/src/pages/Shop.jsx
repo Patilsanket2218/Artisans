@@ -242,12 +242,12 @@ const Shop = () => {
                         <span className="text-warning">⭐ {product.rating}</span>
                       </div>
 
-                      <button
+                      {/* <button
                         className="btn btn-outline-danger w-100 mt-3"
                         onClick={() => addToWishlist(product)}
                       >
                         ❤️ Add to Wishlist
-                      </button>
+                      </button> */}
 
                       <Link
                         to={`/product/${product._id}`}
