@@ -20,7 +20,7 @@ const Shop = () => {
   const API_URL = "https://artisans-2uw2.onrender.com/";
 
   useEffect(() => {
-    fetch(`${API_URL}/api/products`)
+    fetch(`${API_URL}api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
