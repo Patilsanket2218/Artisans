@@ -1,6 +1,9 @@
 # 🏺 Artisans: Global Handcrafted Goods Marketplace
 
-![Artisans Marketplace Banner](https://raw.githubusercontent.com/vighneshparab/Artisans/e76940b27c8b5f596be592c9f3c64cdd3214df8e/Banner.png)
+![GreenHeaven Banner](https://tse3.mm.bing.net/th/id/OIP.bX-EgmQwGuEkoBUtox61BwHaEK?pid=Api&P=0&h=180)
+![GreenHeaven Banner](https://tse3.mm.bing.net/th/id/OIP.DjPTGqA8nARW2Fzpa84J4wHaE7?pid=Api&P=0&h=180)
+![GreenHeaven Banner](https://tse2.mm.bing.net/th/id/OIP.CEQGwhzVLJlZf_7o9DJiDwHaEV?pid=Api&P=0&h=180)
+
 
 ## 📝 Project Overview
 
@@ -149,10 +152,11 @@ This project is open-source and available under the MIT License. See `LICENSE` f
 
 ## 📞 Contact & Support
 
-**Vighnesh Sadanand Parab**
-- 📧 Email: vighneshparab83@gmail.com
-- 🔗 GitHub: [/vighneshparab](https://github.com/vighneshparab)
-- 🌐 Project Repository: [Artisans Marketplace](https://github.com/vighneshparab/Artisans/)
+**Sanket Manohar Patil**
+- 📧 Email: sp5768528@gmail.com
+- 🔗 GitHub: https://github.com/Patilsanket2218
+- 🔗 Live link: [https://github.com/Patilsanket2218](https://artisans-9zib.vercel.app/)
+- 🌐 Project Repository: [Artisans Marketplace](https://github.com/Patilsanket2218/Artisans)
 
 ## 🙏 Acknowledgements
 
