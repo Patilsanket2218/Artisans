@@ -1,0 +1,131 @@
+.hero-section {
+  height: 90vh;
+  background-image: url('../assets/images/hero.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  padding: 12px 35px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #A67F5A, #80593D);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: linear-gradient(90deg, #80593D, #A67F5A);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 10px;
+}
+
+.product-buttons button,
+.product-buttons .view-btn {
+  padding: 5px 12px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-buttons button:hover,
+.product-buttons .view-btn:hover {
+  transform: scale(1.05);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #F5EDE3;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

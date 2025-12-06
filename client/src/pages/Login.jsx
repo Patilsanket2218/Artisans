@@ -1,23 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import loginImage from "../assets/images/login-image.jpg";
 
 const Login = () => {
   const navigate = useNavigate();
-
-  // State for form fields
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
-  // UI State
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Handle Login Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -26,24 +20,13 @@ const Login = () => {
     try {
       const response = await axios.post(
         "https://artisans-2uw2.onrender.com/api/users/login",
-        {
-          email,
-          password,
-        }
+        { email, password }
       );
-
-      // Destructure response data
       const { token, user } = response.data;
 
-      if (!user || !user.role) {
-        throw new Error("Invalid user data received");
-      }
-
-      // Store token and user details
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
 
-      // Role-Based Redirection
       switch (user.role) {
         case "admin":
           navigate("/admin-dashboard");
@@ -65,39 +48,38 @@ const Login = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light px-3 py-3">
       <div
-        className="row shadow-lg bg-white rounded overflow-hidden w-100"
-        style={{ maxWidth: "850px" }}
+        className="row shadow-lg rounded-5 overflow-hidden w-100"
+        style={{ maxWidth: "900px", minHeight: "500px" }}
       >
-        {/* Left Side Image */}
+        {/* Left Image */}
         <div className="col-md-6 d-none d-md-block p-0">
           <img
             src={loginImage}
             alt="Login"
             className="img-fluid w-100 h-100"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", borderTopLeftRadius: "20px", borderBottomLeftRadius: "20px" }}
           />
         </div>
 
-        {/* Right Side Form */}
-        <div className="col-md-6 p-4">
-          <h2 className="text-center mb-4 text-primary">Login</h2>
+        {/* Right Form */}
+        <div className="col-md-6 p-5 d-flex flex-column justify-content-center bg-white">
+          <h2 className="text-center mb-4" style={{ color: "#6F1D1D", fontWeight: "700" }}>
+            Welcome Back
+          </h2>
 
-          {/* Error Message */}
           {errorMessage && (
             <div className="alert alert-danger text-center">{errorMessage}</div>
           )}
 
-          {/* Login Form */}
           <form onSubmit={handleSubmit}>
-            {/* Email */}
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">
+              <label htmlFor="email" className="form-label fw-semibold">
                 Email Address
               </label>
               <input
                 type="email"
-                className="form-control"
                 id="email"
+                className="form-control shadow-sm"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -105,15 +87,14 @@ const Login = () => {
               />
             </div>
 
-            {/* Password with Toggle */}
             <div className="mb-3 position-relative">
-              <label htmlFor="password" className="form-label">
+              <label htmlFor="password" className="form-label fw-semibold">
                 Password
               </label>
               <input
                 type={showPassword ? "text" : "password"}
-                className="form-control"
                 id="password"
+                className="form-control shadow-sm"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -121,15 +102,14 @@ const Login = () => {
               />
               <span
                 className="position-absolute top-50 end-0 translate-middle-y me-3"
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", fontSize: "18px" }}
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? "👁️" : "🙈"}
               </span>
             </div>
 
-            {/* Remember Me Checkbox */}
-            <div className="d-flex justify-content-between align-items-center mb-3">
+            <div className="d-flex justify-content-between align-items-center mb-4">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -142,29 +122,24 @@ const Login = () => {
                   Remember Me
                 </label>
               </div>
-              <Link to="/forgot-password" className="text-primary">
+              <Link to="/forgot-password" className="text-decoration-none" style={{ color: "#6F1D1D" }}>
                 Forgot Password?
               </Link>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
-              className="btn btn-primary w-100 py-2"
+              className="btn w-100 py-2"
+              style={{ backgroundColor: "#6F1D1D", color: "#fff", fontWeight: "600" }}
               disabled={loading}
             >
-              {loading ? (
-                <span className="spinner-border spinner-border-sm"></span>
-              ) : (
-                "Login"
-              )}
+              {loading ? <span className="spinner-border spinner-border-sm"></span> : "Login"}
             </button>
           </form>
 
-          {/* Sign Up Link */}
-          <div className="text-center mt-3">
+          <div className="text-center mt-4">
             <span>Don't have an account? </span>
-            <Link to="/register" className="text-primary fw-bold">
+            <Link to="/register" className="fw-bold" style={{ color: "#6F1D1D" }}>
               Sign Up
             </Link>
           </div>

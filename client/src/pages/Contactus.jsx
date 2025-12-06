@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import heroImage from "../assets/images/hero.jpg"; // Replace with an appropriate image path
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -10,202 +9,216 @@ const ContactUs = () => {
     email: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const API_URL = "https://artisans-2uw2.onrender.com/"; // Adjust with your backend URL
+  const API_URL = "https://artisans-2uw2.onrender.com/";
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     try {
-      const response = await fetch(`${API_URL}/api/contact`, {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      if (response.ok) {
-        setSuccessMessage("Your message has been sent successfully!");
+
+      if (res.ok) {
+        setSuccessMessage("Your message has been sent!");
         setErrorMessage("");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setErrorMessage("There was an error submitting your message.");
+        setErrorMessage("Something went wrong. Try again.");
       }
-    } catch (error) {
-      setErrorMessage("Failed to send your message. Please try again.");
+    } catch {
+      setErrorMessage("Failed to send message. Check your internet.");
     }
     setIsSubmitting(false);
   };
 
   return (
-    <div style={{ backgroundColor: "#FFFBE9" }}>
+    <div style={{ backgroundColor: "#FFF8F2" }}>
       <Navbar />
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section
-        className="text-center text-light d-flex align-items-center justify-content-center"
         style={{
-          backgroundImage: `url(${heroImage})`,
-          height: "50vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          padding: "120px 20px 160px",
+          background: "linear-gradient(135deg, #6F1D1D, #AD4C4C)",
+          color: "white",
+          textAlign: "center",
           position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Text */}
+        <div style={{ position: "relative", zIndex: 5 }}>
+          <h1 className="fw-bold display-4">Contact Us</h1>
+          <p className="lead" style={{ opacity: 0.9 }}>
+            We're here to help and listen to you.
+          </p>
+        </div>
+
+        {/* Floating shapes */}
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            padding: "20px",
-            borderRadius: "8px",
+            width: "70px",
+            height: "70px",
+            background: "rgba(255,255,255,0.15)",
+            borderRadius: "15px",
+            position: "absolute",
+            top: "40px",
+            left: "60px",
+            transform: "rotate(20deg)",
+            zIndex: 2,
           }}
+        ></div>
+        <div
+          style={{
+            width: "90px",
+            height: "90px",
+            background: "rgba(255,255,255,0.12)",
+            borderRadius: "50%",
+            position: "absolute",
+            top: "120px",
+            right: "80px",
+            zIndex: 2,
+          }}
+        ></div>
+
+        {/* Wavy SVG */}
+        <svg
+          style={{
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            zIndex: 1,
+          }}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
         >
-          <h1 className="fw-bold">Get in Touch</h1>
-          <p className="lead">We'd love to hear from you!</p>
-        </div>
+          <path
+            fill="#311101ff"
+            d="M0,192L60,170.7C120,149,240,107,360,117.3C480,128,600,192,720,224C840,256,960,256,1080,234.7C1200,213,1320,171,1380,149.3L1440,128V0H0Z"
+          ></path>
+        </svg>
       </section>
 
-      <section id="contact-us" className="py-5">
-        <div className="container">
-          <div className="row gy-4">
-            {/* Contact Form */}
-            <div className="col-md-6">
-              <div className="card shadow-lg border-0">
-                <div className="card-body p-4">
-                  <h4 className="text-center mb-4" style={{ color: "#AD8B73" }}>
-                    Send Us a Message
-                  </h4>
+      {/* CONTACT SECTION */}
+      <section className="container py-5">
+        <div className="row gy-4">
+          {/* FORM */}
+          <div className="col-md-6">
+            <div
+              className="shadow-lg p-4 rounded-4"
+              style={{ background: "white" }}
+            >
+              <h4 className="text-center mb-4" style={{ color: "#7A1F1F" }}>
+                Send Us a Message
+              </h4>
 
-                  {/* Success/Error Messages */}
-                  {successMessage && (
-                    <div className="alert alert-success" role="alert">
-                      {successMessage}
-                    </div>
-                  )}
-                  {errorMessage && (
-                    <div className="alert alert-danger" role="alert">
-                      {errorMessage}
-                    </div>
-                  )}
+              {successMessage && (
+                <div className="alert alert-success">{successMessage}</div>
+              )}
+              {errorMessage && (
+                <div className="alert alert-danger">{errorMessage}</div>
+              )}
 
-                  <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                      <label htmlFor="name" className="form-label">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="email" className="form-label">
-                        Email address
-                      </label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="message" className="form-label">
-                        Message
-                      </label>
-                      <textarea
-                        className="form-control"
-                        id="message"
-                        name="message"
-                        rows="4"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      className="btn"
-                      style={{
-                        backgroundColor: "#AD8B73",
-                        color: "#FFFBE9",
-                        border: "none",
-                        width: "100%",
-                      }}
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
-                  </form>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">Name</label>
+                  <input
+                    type="text"
+                    className="form-control rounded-3"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Enter your full name"
+                  />
                 </div>
-              </div>
+
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">Email</label>
+                  <input
+                    type="email"
+                    className="form-control rounded-3"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">Message</label>
+                  <textarea
+                    className="form-control rounded-3"
+                    rows="4"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Write your message..."
+                  ></textarea>
+                </div>
+
+                <button
+                  className="btn w-100 rounded-pill"
+                  style={{
+                    backgroundColor: "#6F1D1D",
+                    color: "white",
+                    padding: "10px",
+                  }}
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
+              </form>
             </div>
+          </div>
 
-            {/* Contact Info */}
-            <div className="col-md-6">
-              <div className="card shadow-lg border-0">
-                <div className="card-body p-4">
-                  <h4 className="text-center mb-4" style={{ color: "#AD8B73" }}>
-                    Contact Information
-                  </h4>
-                  <p className="mb-3">
-                    <i className="fas fa-map-marker-alt me-2"></i>
-                    <strong>Address:</strong> 1234 Main Street, Suite 101, City,
-                    State, ZIP
-                  </p>
-                  <p className="mb-3">
-                    <i className="fas fa-phone-alt me-2"></i>
-                    <strong>Phone:</strong> (123) 456-7890
-                  </p>
-                  <p>
-                    <i className="fas fa-envelope me-2"></i>
-                    <strong>Email:</strong> support@company.com
-                  </p>
-                  <h5 className="mt-4 text-center" style={{ color: "#6D2323" }}>
-                    Follow Us
-                  </h5>
-                  <div className="d-flex justify-content-center">
-                    <a
-                      href="#"
-                      className="text-dark mx-2"
-                      style={{ fontSize: "20px" }}
-                    >
-                      <i className="fab fa-facebook"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="text-dark mx-2"
-                      style={{ fontSize: "20px" }}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="text-dark mx-2"
-                      style={{ fontSize: "20px" }}
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </div>
-                </div>
+          {/* CONTACT INFO */}
+          <div className="col-md-6">
+            <div
+              className="shadow-lg p-4 rounded-4"
+              style={{ background: "white" }}
+            >
+              <h4 className="text-center mb-4" style={{ color: "#7A1F1F" }}>
+                Contact Information
+              </h4>
+
+              <p className="mb-3">
+                📍 <strong>Address:</strong> 1234 Artisan Street, Mumbai, India
+              </p>
+
+              <p className="mb-3">
+                📞 <strong>Phone:</strong> +91 9876543210
+              </p>
+
+              <p className="mb-3">
+                ✉️ <strong>Email:</strong> support@artisans.com
+              </p>
+
+              <h5 className="text-center mt-4" style={{ color: "#6F1D1D" }}>
+                Connect With Us
+              </h5>
+
+              <div className="d-flex justify-content-center gap-3 mt-2">
+                <i className="fab fa-facebook fs-4 text-dark"></i>
+                <i className="fab fa-twitter fs-4 text-dark"></i>
+                <i className="fab fa-instagram fs-4 text-dark"></i>
               </div>
             </div>
           </div>

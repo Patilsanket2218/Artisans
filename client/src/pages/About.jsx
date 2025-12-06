@@ -1,188 +1,202 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import backgroundImage from "../assets/images/hero.jpg";
 import aboutImage from "../assets/images/download.jfif";
 
 const About = () => {
   return (
     <div>
       <Navbar />
-      {/* Hero Section */}
-      <div
-        className="about-hero text-center text-light d-flex align-items-center justify-content-center"
+
+      {/* HERO – Minimal Premium Section */}
+      <section
         style={{
-          backgroundImage: `url(${backgroundImage})`,
-          height: "60vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          background: "linear-gradient(135deg, #5e1212, #a94444)",
+          padding: "130px 20px 150px",
+          color: "#fff",
+          textAlign: "center",
           position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Decorative Circles */}
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            padding: "30px",
-            borderRadius: "10px",
+            position: "absolute",
+            width: "200px",
+            height: "200px",
+            top: "-40px",
+            left: "-40px",
+            background: "rgba(255,255,255,0.08)",
+            borderRadius: "50%",
+          }}
+        ></div>
+
+        <div
+          style={{
+            position: "absolute",
+            width: "280px",
+            height: "280px",
+            bottom: "-60px",
+            right: "-80px",
+            background: "rgba(255,255,255,0.06)",
+            borderRadius: "50%",
+          }}
+        ></div>
+
+        <h1 className="fw-bold display-4">About Artisan Shop</h1>
+        <p
+          className="lead mt-3"
+          style={{
+            maxWidth: "700px",
+            margin: "0 auto",
+            lineHeight: "1.7",
+            color: "#fbeaea",
+            fontSize: "1.25rem",
           }}
         >
-          <h1 className="fw-bold display-4">About Artisan Shop</h1>
-          <p className="lead mt-3" style={{ fontSize: "1.25rem" }}>
-            Crafted with Passion, Inspired by Culture
+          Celebrating the beauty of handmade craft, culture, and creativity.
+        </p>
+      </section>
+
+      {/* CIRCLE IMAGE + STORY */}
+      <section style={{ padding: "80px 20px" }}>
+        <div className="container text-center">
+          <img
+            src={aboutImage}
+            alt="Artisan"
+            style={{
+              width: "230px",
+              height: "230px",
+              objectFit: "cover",
+              borderRadius: "50%",
+              border: "8px solid #fff",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+              marginBottom: "30px",
+              transition: "0.3s",
+            }}
+            onMouseEnter={(e) => (e.target.style.transform = "scale(1.07)")}
+            onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+          />
+
+          <h2 className="fw-bold mb-3" style={{ color: "#6F1D1D" }}>
+            Our Story
+          </h2>
+
+          <p
+            style={{
+              maxWidth: "750px",
+              margin: "0 auto",
+              color: "#555",
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+            }}
+          >
+            Artisan Shop was born with a vision to support local craftsmanship
+            and preserve traditional art. Every item we feature carries a piece
+            of culture, heritage, and the heartfelt dedication of skilled
+            artisans.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* About Content Section */}
-      <div className="container py-5">
-        <div className="row align-items-center">
-          {/* Image Section */}
-          <div className="col-md-6 mb-4 mb-md-0">
-            <img
-              src={aboutImage}
-              alt="Artisan Craft"
-              className="img-fluid rounded shadow-lg"
-              style={{ transform: "scale(1)", transition: "transform 0.3s" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            />
-          </div>
-          {/* Text Section */}
-          <div className="col-md-6">
-            <h2 className="fw-bold mb-4" style={{ color: "#AD4C4C" }}>
-              Our Story
-            </h2>
-            <p style={{ color: "#444", lineHeight: "1.8" }}>
-              Artisan Shop was founded with a vision to bring traditional and
-              handcrafted goods to the modern marketplace. Our mission is to
-              empower skilled artisans by providing them with a platform to
-              showcase their work to a global audience. Each piece we sell is a
-              testament to the dedication and craftsmanship of our talented
-              creators.
-            </p>
-            <p style={{ color: "#444", lineHeight: "1.8" }}>
-              We believe in sustainability, creativity, and keeping traditions
-              alive through the art of handmade goods. By choosing Artisan Shop,
-              you contribute to preserving cultural heritage and supporting
-              communities around the world.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Mission Section */}
-      <div
-        className="py-5 text-center text-light"
+      {/* GLASS MISSION CARD */}
+      <section
         style={{
-          background: "linear-gradient(90deg, #AD4C4C, #6D2323)",
+          padding: "80px 20px",
+          background: "#f9e4e4",
         }}
       >
         <div className="container">
-          <h2 className="fw-bold mb-4">Our Mission</h2>
-          <p
-            className="lead mx-auto"
-            style={{ maxWidth: "800px", lineHeight: "1.8", fontSize: "1.2rem" }}
+          <div
+            className="shadow-lg p-5 mx-auto"
+            style={{
+              maxWidth: "900px",
+              background: "rgba(255, 255, 255, 0.7)",
+              borderRadius: "22px",
+              backdropFilter: "blur(8px)",
+            }}
           >
-            To connect people with unique and meaningful handcrafted products
-            while uplifting artisans and preserving age-old traditions. We
-            strive to create a marketplace where every purchase has a purpose.
-          </p>
-        </div>
-      </div>
+            <h2
+              className="fw-bold text-center mb-4"
+              style={{ color: "#721f1f" }}
+            >
+              Our Mission
+            </h2>
 
-      {/* Values Section */}
-      <div className="container py-5">
+            <p
+              style={{
+                textAlign: "center",
+                lineHeight: "1.7",
+                fontSize: "1.15rem",
+                color: "#444",
+              }}
+            >
+              We aim to bring handmade excellence to the modern world.
+              By supporting artisans globally, we help preserve unique art forms
+              and create sustainable opportunities for traditional craftsmen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES SECTION – Modern Cards */}
+      <section className="container py-5">
         <h2
           className="fw-bold text-center mb-5"
-          style={{
-            color: "#6D2323",
-            position: "relative",
-          }}
+          style={{ color: "#6F1D1D", fontSize: "2rem" }}
         >
-          Our Values
+          What We Stand For
         </h2>
-        <div className="row text-center">
-          <div className="col-md-4 mb-4">
-            <div
-              className="card shadow border-0 h-100"
-              style={{ transition: "transform 0.3s" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            >
-              <div className="card-body">
+
+        <div className="row g-4">
+          {[
+            {
+              title: "Authenticity",
+              text: "Every product stays true to its origin and tradition.",
+            },
+            {
+              title: "Sustainability",
+              text: "We value eco-friendly practices and conscious crafting.",
+            },
+            {
+              title: "Artisan Empowerment",
+              text: "Your purchase directly supports local artisans.",
+            },
+          ].map((card, i) => (
+            <div className="col-md-4" key={i}>
+              <div
+                className="p-4 shadow-sm rounded-4 h-100 text-center"
+                style={{
+                  background: "#fff",
+                  transition: "0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform = "translateY(-12px)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.transform = "translateY(0)")
+                }
+              >
                 <h5
                   className="fw-bold mb-3"
-                  style={{ color: "#6D2323", fontSize: "1.25rem" }}
+                  style={{ color: "#7c2222", fontSize: "1.2rem" }}
                 >
-                  Sustainability
+                  {card.title}
                 </h5>
-                <p style={{ lineHeight: "1.8", color: "#555" }}>
-                  Every product we offer is sourced responsibly, ensuring
-                  minimal impact on the environment.
+                <p
+                  style={{
+                    color: "#666",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {card.text}
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div
-              className="card shadow border-0 h-100"
-              style={{ transition: "transform 0.3s" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            >
-              <div className="card-body">
-                <h5
-                  className="fw-bold mb-3"
-                  style={{ color: "#6D2323", fontSize: "1.25rem" }}
-                >
-                  Authenticity
-                </h5>
-                <p style={{ lineHeight: "1.8", color: "#555" }}>
-                  We ensure every item is genuine and reflects the unique skills
-                  of its creator.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div
-              className="card shadow border-0 h-100"
-              style={{ transition: "transform 0.3s" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            >
-              <div className="card-body">
-                <h5
-                  className="fw-bold mb-3"
-                  style={{ color: "#6D2323", fontSize: "1.25rem" }}
-                >
-                  Community
-                </h5>
-                <p style={{ lineHeight: "1.8", color: "#555" }}>
-                  By shopping with us, you contribute to artisan communities and
-                  their livelihoods.
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>

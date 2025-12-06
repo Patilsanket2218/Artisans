@@ -1,46 +1,37 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/style/navbar.css";
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false); // state to control dropdown visibility
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const isLoggedIn = localStorage.getItem("token");
   const navigate = useNavigate();
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  // Logout function
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     sessionStorage.clear();
-    navigate("/login"); // Redirect to login page
+    navigate("/login");
   };
 
   return (
     <nav
       className="navbar navbar-expand-lg shadow-sm sticky-top"
-      style={{
-        backgroundColor: "#fff",
-        borderBottom: "1px solid #E3CAA5",
-      }}
+      style={{ backgroundColor: "#fff", borderBottom: "2px solid #AD8B73" }}
     >
       <div className="container-fluid">
         {/* Logo */}
         <Link
           to="/"
           className="navbar-brand fw-bold"
-          style={{ color: "#6D2323" }}
+          style={{ color: "#6D2323", fontSize: "1.5rem" }}
         >
-          <span style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)" }}>
-            Artisan
-          </span>
-          Shop
+          Artisan <span style={{ color: "#AD8B73" }}>Shop</span>
         </Link>
 
-        {/* Toggler Button for Mobile */}
+        {/* Toggler for mobile */}
         <button
           className="navbar-toggler"
           type="button"
@@ -53,22 +44,19 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible Content */}
+        {/* Navbar links */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             {["Home", "About", "Shop", "Contact Us"].map((item, index) => (
               <li className="nav-item" key={index}>
                 <Link
-                  className="nav-link px-3 py-2" // Added padding for mobile
                   to={
                     item === "Home"
                       ? "/"
                       : `/${item.toLowerCase().replace(" ", "")}`
                   }
-                  style={{
-                    color: "#6D2323",
-                    textShadow: "0.5px 0.5px 2px rgba(0, 0, 0, 0.1)",
-                  }}
+                  className="nav-link px-3 py-2"
+                  style={{ color: "#6D2323", fontWeight: "500" }}
                 >
                   {item}
                 </Link>
@@ -78,12 +66,13 @@ const Navbar = () => {
             {/* Wishlist */}
             <li className="nav-item">
               <Link
-                className="btn ms-2 px-3 py-2 d-flex align-items-center"
                 to="/wishlist"
+                className="btn ms-2 px-3 py-2 d-flex align-items-center"
                 style={{
                   backgroundColor: "#E3CAA5",
                   color: "#6D2323",
                   border: "none",
+                  fontWeight: "500",
                 }}
               >
                 <i className="fas fa-heart me-1"></i> Wishlist
@@ -93,24 +82,25 @@ const Navbar = () => {
             {/* Cart */}
             <li className="nav-item">
               <Link
-                className="btn ms-2 px-3 py-2 d-flex align-items-center"
                 to="/cart"
+                className="btn ms-2 px-3 py-2 d-flex align-items-center"
                 style={{
                   backgroundColor: "#FFFBE9",
                   color: "#6D2323",
                   border: "none",
+                  fontWeight: "500",
                 }}
               >
                 <i className="fas fa-shopping-cart me-1"></i> Cart
               </Link>
             </li>
 
-            {/* Profile / Login */}
+            {/* Login / Profile */}
             {!isLoggedIn ? (
               <li className="nav-item">
                 <Link
-                  className="btn ms-2 px-4 py-2"
                   to="/login"
+                  className="btn ms-2 px-4 py-2"
                   style={{
                     backgroundColor: "#A31D1D",
                     color: "#FEF9E1",
@@ -144,7 +134,8 @@ const Navbar = () => {
                       borderRadius: "10px",
                       boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
                       padding: "10px",
-                      minWidth: "150px",
+                      minWidth: "160px",
+                      zIndex: 1000,
                     }}
                   >
                     <li>
